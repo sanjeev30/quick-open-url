@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quick Open URLs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            margin: 0;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            /* Make the title bold */
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        #urlInput,
+        #aliasInput {
+            width: 100%;
+            /* Make input elements 100% of container */
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+            /* Ensures padding does not exceed container width */
+        }
+
+        .button-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        button {
+            flex: 1;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-save {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-clear {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        #urlList {
+            list-style-type: none;
+            padding: 0;
+            border-top: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        #urlList li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .alias-display,
+        .url-display {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin: 2px 0;
+            word-wrap: break-word;
+        }
+
+        .url-controls {
+            display: flex;
+            gap: 5px;
+            margin-top: 4px;
+        }
+
+        .btn-edit,
+        .btn-delete {
+            padding: 6px 8px;
+            /* Make buttons slightly larger */
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .btn-edit {
+            background-color: #007bff;
+        }
+
+        .btn-delete {
+            background-color: red;
+        }
+
+        .btn-open {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Quick Open URLs</h2>
+
+    <div class="input-group">
+        <input type="text" id="urlInput" placeholder="Enter URL" required />
+        <input type="text" id="aliasInput" placeholder="Enter Alias (optional)" />
+        <div class="button-group">
+            <button type="button" class="btn-save" id="saveUrlButton">Save</button>
+            <button type="button" class="btn-clear" id="clearInputsButton">Clear</button>
+        </div>
+    </div>
+
+    <ul id="urlList"></ul>
+
+    <button class="btn-open" id="openUrls">Open All URLs</button>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

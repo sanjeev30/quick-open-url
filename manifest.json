@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Quick Open URLs",
+    "version": "1.1",
+    "description": "Opens a list of websites when the extension is opened and allows saving URLs from the context menu.",
+    "permissions": [
+        "storage",
+        "tabs",
+        "contextMenus"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.ico",
+            "48": "icon48.ico",
+            "128": "icon128.ico"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
